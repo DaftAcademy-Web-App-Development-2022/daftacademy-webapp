@@ -1,0 +1,22 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.background {
+  @apply h-full w-full fixed top-0 left-0 z-0 bg-[url('/pattern.svg')] bg-no-repeat bg-cover bg-center;
+}
+
+.gradient {
+  width: 90px;
+  height: 90px;
+  filter: blur(calc(90px / 5));
+  animation: rotate 30s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  position: fixed;
+  @apply bg-gradient-to-tr from-warning to-primary;
+}
