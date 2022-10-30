@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Container, Background } from "~/components";
 import type { NextPageWithLayout } from "~/types/common.types";
-import Image from "next/future/image";
+import Image from "next/image";
 
 import { getProviders, signIn } from "next-auth/react";
 

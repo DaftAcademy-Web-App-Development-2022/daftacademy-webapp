@@ -11,11 +11,12 @@ export const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Progress
-        color="hsl(14, 98%, 66%)"
+        color="hsl(240, 8%, 54%)"
         startPosition={0.3}
         stopDelayMs={200}
         height={3}
         showOnShallow={true}
+        options={{ showSpinner: false }}
       />
       <header className={styles.header}>
         <Sidebar />

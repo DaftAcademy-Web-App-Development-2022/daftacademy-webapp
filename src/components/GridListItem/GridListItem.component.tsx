@@ -15,8 +15,11 @@ const GridListItem = ({ item }: Props) => (
         style={{ backgroundColor: item.color }}
       />
 
-      <Link href={`/playlist/${encodeURIComponent(item.id)}`} passHref>
-        <a className={styles.playlistName}>{item.name}</a>
+      <Link
+        href={`/playlist/${encodeURIComponent(item.id)}`}
+        className={styles.playlistName}
+      >
+        {item.name}
       </Link>
     </div>
 

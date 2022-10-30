@@ -5,7 +5,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { FolderIcon } from "@heroicons/react/24/outline";
 import useSpotify from "~/hooks/useSpotify.hook";
 import debounce from "lodash.debounce";
-import Image from "next/future/image";
+import Image from "next/image";
 
 import styles from "./Search.module.css";
 
