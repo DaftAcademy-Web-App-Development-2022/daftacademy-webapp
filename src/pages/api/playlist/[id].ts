@@ -23,7 +23,7 @@ export default async function handler(
     id = id[0];
   }
 
-  dbConnect();
+  await dbConnect();
 
   if (method === "GET") {
     try {

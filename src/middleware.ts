@@ -7,15 +7,6 @@ export async function middleware(
   req: NextRequest
 ): Promise<NextMiddlewareResult> {
   const { pathname } = req.nextUrl;
-  if (
-    !process.env.MONGODB_URI &&
-    !process.env.NEXTAUTH_SECRET &&
-    !process.env.NEXTAUTH_URL &&
-    !process.env.SPOTIFY_CLIENT_SECRET &&
-    !process.env.SPOTIFY_CLIENT_ID
-  ) {
-    return NextResponse.rewrite(new URL("/error", req.url));
-  }
 
   const token = await getToken({
     req,

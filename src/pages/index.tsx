@@ -13,7 +13,7 @@ import Main from "~/views/Main/Main.view";
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   await dbConnect();
-  const limit = 4;
+  const limit = 0;
   const data = await getPlaylists(limit);
 
   if (!data) {
@@ -29,7 +29,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
         data,
       },
     },
-    revalidate: 60 * 5,
+    revalidate: 60,
   };
 };
 
@@ -37,17 +37,13 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Index: NextPageWithLayout<Props> = ({ fallbackData, limit }) => {
   const { data, mutate, isLoading } = useList({
-    limit: 0,
+    limit,
     fallbackData,
     revalidateOnMount: false,
     revalidateOnFocus: false,
   });
 
   const playlists = isLoading ? null : data;
-
-  React.useEffect(() => {
-    mutate();
-  }, [mutate]);
 
   return (
     <>

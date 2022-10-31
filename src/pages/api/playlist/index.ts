@@ -27,7 +27,7 @@ export default async function handler(
     limit = limit[0];
   }
 
-  dbConnect();
+  await dbConnect();
 
   if (method === "GET") {
     try {
